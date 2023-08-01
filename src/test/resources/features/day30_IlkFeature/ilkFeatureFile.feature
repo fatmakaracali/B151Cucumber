@@ -3,3 +3,4 @@ Feature: US001 Amazon Sayfasi Testi
     Given kullanici arama amazon sayfasina gider
     Then kullanici arama kutusunda iphone aratir
     And sayfayi kapatir
+
