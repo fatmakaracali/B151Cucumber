@@ -12,10 +12,14 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class) //Test calistirici Notasyon
-@CucumberOptions(features = "src/test/resources/features",
+@CucumberOptions(plugin ={"pretty","html:target/default-cucumber-reports.html",
+                                   "json:target/json-reports/cucumber.json",
+                                   "junit:target/xml-report/cucumber.xml"},
+                 features = "src/test/resources/features",
                  glue = "techproed/stepDefinition",
-                 tags = "@g1 or @g2",
-                 dryRun = false ) //dryRun true secersek scenariolari kontrol eder, browser'i calistirmaz
+                 tags = "@techpro",
+                 dryRun = false,      //dryRun true secersek scenariolari kontrol eder, browser'i calistirmaz
+                 monochrome = true)   // false yazarsak renkli konsola stepleri renkli yazdirir
 
 public class Runner {
 }

@@ -1,4 +1,4 @@
-
+@all
 Feature: US001 TechproEducation Sayfasi Testi
 Scenario: TC01 Sayfada Arama Yapar
   Given kullanici techpro sayfasina gider
@@ -13,6 +13,7 @@ Scenario: TC01 Sayfada Arama Yapar
     And sayfa basliginin java icerdigini test eder
     And sayfayi kapatir
 
+  @techpro
     Scenario: TC03 Sayfada Arama Yapar
       Given kullanici techpro sayfasina gider
       Then arama kutusunda mobile aratir

@@ -1,5 +1,6 @@
 package techproed.stepDefinition;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -62,6 +63,18 @@ public class GoogleStepDefinition {
     }
 
 
+    @Then("kullanici data tableda verilen bilgileri aratir")
+    public void kullaniciDataTabledaVerilenBilgileriAratir(DataTable data) {
+        System.out.println(data.asList());
+        googlePage.cerez.click();
+        for (int i = 1; i < data.asList().size(); i++) {
+           ReasablesMethods.bekle(2);
+          googlePage.aramaKutusuGoogleUlr.sendKeys(data.asList().get(i), Keys.ENTER);
+            ReasablesMethods.bekle(2);
+            Assert.assertTrue(Driver.getDriver().getTitle().contains(data.asList().get(i)));
+            googlePage.aramaKutusuGoogleUlr.clear();
+        }
+    }
 }
 
 
