@@ -94,15 +94,10 @@ public class TechproStepDefinition {
     }
 
 
-
-
-
-
-
-
-
-
-
+   @Given("kullanici {string} url sayfasina gider")
+    public void kullaniciUrlSayfasinaGider(String url) {
+       Driver.getDriver().get(url);
+    }
 
 
 }
