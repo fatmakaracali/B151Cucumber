@@ -1,10 +1,10 @@
 package techproed.stepDefinition;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import techproed.pages.DataTablePage;
 
 public class DataTableStepDefinition {
 
@@ -32,6 +32,7 @@ public class DataTableStepDefinition {
 
     @And("kullanici search bölumune {string} bilgisini girer")
     public void kullaniciSearchBölumuneBilgisiniGirer(String str) {
+
         dataTablePage.searchBox.sendKeys(str);
     }
 

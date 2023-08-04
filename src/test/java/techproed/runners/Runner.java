@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
                                    "junit:target/xml-report/cucumber.xml"},
                  features = "src/test/resources/features",
                  glue = "techproed/stepDefinition",
-                 tags = "@techpro",
+                 tags = "@audi",
                  dryRun = false,      //dryRun true secersek scenariolari kontrol eder, browser'i calistirmaz
                  monochrome = true)   // false yazarsak renkli konsola stepleri renkli yazdirir
 

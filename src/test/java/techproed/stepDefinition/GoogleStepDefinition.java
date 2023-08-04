@@ -14,27 +14,7 @@ import techproed.utilities.ReasablesMethods;
 public class GoogleStepDefinition {
 
     GooglePage googlePage = new GooglePage();
-    @Given("kullanici {string} sayfasina gitti")
-    public void kullaniciSayfasinaGitti(String url) {
 
-
-        Driver.getDriver().get(ConfigReader.getProperty(url));
-        ReasablesMethods.bekle(2);
-
-
-    }
-
-    @Then("kullanici google arama kutusunda {string} aratir")
-    public void kullaniciGoogleAramaKutusundaAratir(String arac) {
-
-        googlePage.aramaKutusuGoogleUlr.sendKeys(arac, Keys.ENTER);
-    }
-
-    @And("google sayfasinda basligin {string} icerdigini test eder")
-    public void googleSayfasindaBasliginIcerdiginiTestEder(String baslik) {
-
-        Assert.assertTrue(Driver.getDriver().getTitle().contains(baslik));
-    }
 
 
     @And("kullanici cerezi kapatir")
@@ -42,6 +22,21 @@ public class GoogleStepDefinition {
 
         googlePage.cerez.click();
         ReasablesMethods.bekle(2);
+    }
+    @Given("kullanici {string} sayfasina gitti")
+    public void kullaniciSayfasinaGitti(String url) {
+        Driver.getDriver().get(ConfigReader.getProperty(url));
+
+    }
+
+    @Then("kullanici google arama kutusunda {string} aratir")
+    public void kullaniciGoogleAramaKutusundaAratir(String arac) {
+        googlePage.aramaKutusuGoogleUlr.sendKeys(arac, Keys.ENTER);
+    }
+
+    @And("google sayfasinda basligin {string} icerdigini test eder")
+    public void googleSayfasindaBasliginIcerdiginiTestEder(String baslik) {
+        Assert.assertTrue(Driver.getDriver().getTitle().contains(baslik));
     }
 
 
